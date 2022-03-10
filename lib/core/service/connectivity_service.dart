@@ -8,6 +8,8 @@ class ConnectivityService {
   final connctivityStream = StreamController<ConnectivityResult>();
 
   ConnectivityService() {
+
+    print("internet checkking");
     _connectivity.onConnectivityChanged.listen((event) {
       connctivityStream.add(event);
     });

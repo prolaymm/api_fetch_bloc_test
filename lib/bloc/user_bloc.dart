@@ -25,7 +25,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(UserLoadingState());
 
       final activity = await _service.getAllUser();
-      emit(UserLoadedState(userName: activity[0].name, zipCode: activity[0].address.zipcode, email: activity[0].email));
+      emit(UserLoadedState(mUserList: activity));
     });
 
     on<NoInternetEvent>((event, emit) async{

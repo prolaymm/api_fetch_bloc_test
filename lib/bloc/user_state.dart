@@ -1,3 +1,4 @@
+import 'package:bloc_api_handling/core/model/user_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class UserState extends Equatable{
@@ -20,12 +21,14 @@ class UserInternetState extends UserState {
 }
 
 class UserLoadedState extends UserState {
-
+/*
  final String userName;
 final String email;
- final String zipCode;
+ final String zipCode;*/
 
- UserLoadedState({required this.userName, required this.email, required this.zipCode});
+ final List<UserModel> mUserList;
+
+ const UserLoadedState({required this.mUserList});
 
   @override
   // TODO: implement props

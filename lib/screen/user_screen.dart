@@ -28,15 +28,27 @@ class UserScreen extends StatelessWidget {
               );
             }
             if (state is UserLoadedState) {
-              return Column(
-                children: [
-                  Text(state.userName),
-                  Text(state.email),
-                  Text(
-                    state.zipCode.toString(),
-                  ),
-                ],
+              return ListView.builder(
+                  itemCount: state.mUserList.length,
+                  itemBuilder: (_,position) {
+
+
+              return  Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(state.mUserList[position].name),
+                        Text(state.mUserList[position].email),
+                        Text(
+                          state.mUserList[position].address.zipcode.toString(),
+                        ),
+                      ],
+                    ),
+                ),
               );
+              });
             }
              if (state is UserInternetState) {
                return const Text("no internet ");

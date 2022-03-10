@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:bloc_api_handling/core/model/user_model.dart';
 import 'package:http/http.dart' as http;
 
+
+
 class Service {
   late String BASE_URL = "https://jsonplaceholder.typicode.com/users";
 
